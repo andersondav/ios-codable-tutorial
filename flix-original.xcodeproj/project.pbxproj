@@ -19,6 +19,7 @@
 		12656A5C27DFBBE1004FCD8E /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12656A5B27DFBBE1004FCD8E /* MovieCell.swift */; };
 		12656A5F27DFBC2A004FCD8E /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 12656A5E27DFBC2A004FCD8E /* AlamofireImage */; };
 		12656A6127DFC1A4004FCD8E /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12656A6027DFC1A4004FCD8E /* MovieDetailViewController.swift */; };
+		12656A6327DFCA0A004FCD8E /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12656A6227DFCA0A004FCD8E /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		12656A5927DFBA58004FCD8E /* MovieTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewController.swift; sourceTree = "<group>"; };
 		12656A5B27DFBBE1004FCD8E /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		12656A6027DFC1A4004FCD8E /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		12656A6227DFCA0A004FCD8E /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				12656A5927DFBA58004FCD8E /* MovieTableViewController.swift */,
 				12656A5B27DFBBE1004FCD8E /* MovieCell.swift */,
 				12656A6027DFC1A4004FCD8E /* MovieDetailViewController.swift */,
+				12656A6227DFCA0A004FCD8E /* Movie.swift */,
 			);
 			path = "flix-original";
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 			files = (
 				12656A2A27DFABE9004FCD8E /* AppDelegate.swift in Sources */,
 				12656A6127DFC1A4004FCD8E /* MovieDetailViewController.swift in Sources */,
+				12656A6327DFCA0A004FCD8E /* Movie.swift in Sources */,
 				12656A2C27DFABE9004FCD8E /* SceneDelegate.swift in Sources */,
 				12656A5C27DFBBE1004FCD8E /* MovieCell.swift in Sources */,
 				12656A5A27DFBA58004FCD8E /* MovieTableViewController.swift in Sources */,

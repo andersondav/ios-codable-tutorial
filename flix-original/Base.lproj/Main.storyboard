@@ -46,8 +46,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RtJ-P7-WWj">
-                                                    <rect key="frame" x="10" y="10" width="150" height="210"/>
+                                                    <rect key="frame" x="10" y="10" width="150" height="200"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="height" constant="200" id="1y0-QO-v2y"/>
                                                         <constraint firstAttribute="width" constant="150" id="bwc-sk-4nz"/>
                                                     </constraints>
                                                 </imageView>
@@ -74,7 +75,7 @@
                                                 <constraint firstItem="dcX-vf-wFO" firstAttribute="top" secondItem="2mg-58-ja1" secondAttribute="bottom" constant="5" id="fVP-Gz-FB0"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="dcX-vf-wFO" secondAttribute="bottom" constant="10" id="gVM-Ub-TSo"/>
                                                 <constraint firstItem="dcX-vf-wFO" firstAttribute="leading" secondItem="RtJ-P7-WWj" secondAttribute="trailing" constant="10" id="mbD-u9-dJe"/>
-                                                <constraint firstAttribute="bottom" secondItem="RtJ-P7-WWj" secondAttribute="bottom" constant="10" id="n8l-2C-42a"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="RtJ-P7-WWj" secondAttribute="bottom" constant="10" id="n8l-2C-42a"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -113,7 +114,7 @@
                                     <constraint firstAttribute="height" constant="150" id="Ocd-9v-Hf3"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WXP-jy-l2J">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WXP-jy-l2J">
                                 <rect key="frame" x="20" y="160" width="150" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="ExF-xT-cQV"/>

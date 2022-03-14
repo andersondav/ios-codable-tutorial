@@ -11,10 +11,8 @@ import AlamofireImage
 class MovieTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    var movies:[[String:Any]] = [[String:Any]]()
-    
-    static let baseURL = "https://image.tmdb.org/t/p/w185/"
-    
+    var movies:[Movie] = []
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,17 +29,23 @@ class MovieTableViewController: UIViewController, UITableViewDelegate, UITableVi
         let task = session.dataTask(with: request) { (data, response, error) in
              // This will run when the network request returns
              if let error = error {
-                    print(error.localizedDescription)
+                 print(error.localizedDescription)
              } else if let data = data {
-                    let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
 
-                    // TODO: Get the array of movies
-                    // TODO: Store the movies in a property to use elsewhere
-                    // TODO: Reload your table view data
-                 self.movies = dataDictionary["results"] as! [[String:Any]]
-                 print(self.movies)
-                 self.tableView.reloadData()
-
+                // TODO: Get the array of movies
+                // TODO: Store the movies in a property to use elsewhere
+                // TODO: Reload your table view data
+                let results = dataDictionary["results"]
+                 
+                 do {
+                     let resultsData = try JSONSerialization.data(withJSONObject: results, options: []) as Data
+                     self.movies = try JSONDecoder().decode([Movie].self, from: resultsData)
+                     self.tableView.reloadData()
+                 }
+                 catch {
+                     print("Error decoding movies!")
+                 }
              }
         }
         task.resume()
@@ -56,13 +60,9 @@ class MovieTableViewController: UIViewController, UITableViewDelegate, UITableVi
         
         let movie = movies[indexPath.row]
         
-        cell.titleLabel.text = movie["title"] as? String ?? ""
-        cell.descriptionLabel.text = movie["overview"] as? String ?? ""
-        if let url_string = movie["poster_path"] as? String, let url = URL(string: MovieTableViewController.baseURL + url_string) {
-            cell.posterImage.af.setImage(withURL: url)
-        }
-        
-        
+        cell.titleLabel.text = movie.title
+        cell.descriptionLabel.text = movie.description
+        cell.posterImage.af.setImage(withURL: movie.poster)
         
         return cell
     }
@@ -80,12 +80,7 @@ class MovieTableViewController: UIViewController, UITableViewDelegate, UITableVi
                 dest.movie = self.movies[row]
             }
             else {
-                dest.movie = [
-                    "title": "Error",
-                    "description": "Error",
-                    "poster_path": "",
-                    "banner_path": "https://pbs.twimg.com/profile_banners/35701585/1585337833/1500x500"
-                ]
+                dest.movie = Movie(title: "Error", description: "Error")
             }
             
         }
